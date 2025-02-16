@@ -27,20 +27,20 @@ logging.basicConfig(
 )
 
 # ---------------------------
-# 3) 환경변수에서 API 키 및 설정값 불러오기
+# 3) 환경 변수에서 API 키 불러오기
 # ---------------------------
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 GENAI_API_KEY = os.getenv("GENAI_API_KEY")
 
 # ---------------------------
-# 4) Gemini AI 설정값 불러오기
+# 4) Gemini AI 설정 (하드코딩된 설정값 사용)
 # ---------------------------
 generation_config = {
-    "temperature": float(os.getenv("GENAI_TEMPERATURE", 2)),
-    "top_p": float(os.getenv("GENAI_TOP_P", 0.95)),
-    "top_k": int(os.getenv("GENAI_TOP_K", 40)),
-    "max_output_tokens": int(os.getenv("GENAI_MAX_OUTPUT_TOKENS", 8192)),
-    "response_mime_type": os.getenv("GENAI_RESPONSE_MIME_TYPE", "text/plain"),
+    "temperature": 2,
+    "top_p": 0.95,
+    "top_k": 40,
+    "max_output_tokens": 8192,
+    "response_mime_type": "text/plain",
 }
 
 genai.configure(api_key=GENAI_API_KEY)
@@ -70,7 +70,7 @@ chat_session = model.start_chat(
 )
 
 # ---------------------------
-# 5) 특정 채팅(방)만 허용 (환경변수에서 불러오기)
+# 5) 특정 채팅(방)만 허용
 # ---------------------------
 ALLOWED_CHAT_IDS = [int(chat_id) for chat_id in os.getenv("ALLOWED_CHAT_IDS", "").split(",") if chat_id]
 
