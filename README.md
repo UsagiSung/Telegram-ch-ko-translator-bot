@@ -1,6 +1,6 @@
 Telegram CH-KO Translator Bot
 
-📌 텔레그램 한중 번역 봇
+[Korean] 📌 텔레그램 한중 번역 봇
 
 이 텔레그램 봇은 실시간으로 한국어와 중국어 간의 메시지를 번역합니다.
 
@@ -113,5 +113,117 @@ python tbot.py
 ✅ .env 파일에 API 키 저장 (TELEGRAM_TOKEN, GENAI_API_KEY)
 
 ✅ pip install -r requirements.txt 실행하여 패키지 설치
+
+===============================================================================================
+
+[Chinese] 📌 Telegram 韩中翻译机器人
+
+本 Telegram 机器人可以实时翻译韩语和中文之间的消息。
+
+发送韩语消息后，机器人会自动翻译成中文。
+
+发送中文消息后，机器人会自动翻译成韩语。
+
+本翻译机器人使用 Google Gemini AI 进行翻译，能够快速提供考虑到文化差异和上下文的精准翻译。
+
+🚨 要使用机器人，必须在环境变量（.env）中注册聊天 ID！
+
+🚨 在聊天中输入 /chatid 命令获取 ID，并将其添加到 .env 文件中。
+
+🚀 安装与运行方法
+
+1️⃣ 安装必要的依赖包
+
+运行以下命令安装所有必需的依赖项：
+
+pip install -r requirements.txt
+
+✅ 上述命令将自动安装所有必需的 Python 包（如 python-dotenv）。
+
+2️⃣ 创建 Telegram 机器人（使用 BotFather）
+
+Step 1: 通过 BotFather 创建机器人
+
+在 Telegram 中搜索 @BotFather 并开始对话。
+
+输入 /newbot 命令。
+
+按提示输入机器人的名称（例如：MyTranslatorBot）。
+
+按提示输入机器人的用户名（格式：username_bot）。
+
+机器人创建成功后，BotFather 将提供一个 API 令牌（TOKEN）。
+
+✅ 请将此 API 令牌存储到 .env 文件中的 TELEGRAM_TOKEN 变量。
+
+Step 2: 在 Telegram 上启用机器人
+
+在 Telegram 应用中搜索刚刚创建的机器人。
+
+发送 /start 命令以激活机器人。
+
+确保 .env 文件中已保存 BotFather 提供的 API 令牌（TELEGRAM_TOKEN）。
+
+3️⃣ 注册 Google Gemini API 密钥
+
+访问 Google AI Studio。
+
+点击 “Get API Key” 按钮生成新的 API 密钥。
+
+将生成的 API 密钥存储到 .env 文件的 GENAI_API_KEY 变量中。
+
+4️⃣ 创建 .env 文件并进行配置
+
+在项目目录 (Telegram-ch-ko-translator-bot) 中创建 .env 文件，并添加以下内容：
+
+echo TELEGRAM_TOKEN=your-telegram-bot-token > .env
+
+echo GENAI_API_KEY=your-gemini-api-key >> .env
+
+echo ALLOWED_CHAT_IDS=your-chat-id >> .env
+
+或者手动创建 .env 文件并输入以下内容：
+
+TELEGRAM_TOKEN=your-telegram-bot-token
+
+GENAI_API_KEY=your-gemini-api-key
+
+ALLOWED_CHAT_IDS=your-chat-id
+
+✅ 请务必将 your-telegram-bot-token、your-gemini-api-key 和 your-chat-id 替换为实际的值！
+
+✅ 在需要使用翻译功能的聊天群中输入 /chatid 命令，以获取 ALLOWED_CHAT_IDS 的正确值。
+
+5️⃣ 运行机器人
+
+运行以下命令启动机器人：
+
+python tbot.py
+
+✅ 在服务器上运行 Python 代码后，翻译机器人即可开始工作！ 🚀
+
+💡 可用命令
+
+/start	启动机器人并显示说明信息。
+
+/chatid	获取当前聊天的 ID。
+
+/restart	重新启动机器人。
+
+/help	显示可用命令列表。
+
+⚠️ 由于 Gemini Flash 模型的特性，翻译内容可能会因累计处理而出现异常情况。建议定期运行 /restart 命令，以保持翻译准确性。
+
+🎯 最终总结
+
+✅ 使用 @BotFather 创建 Telegram 机器人 → 获取 TELEGRAM_TOKEN
+
+✅ 在 Gemini AI 生成 API 密钥 → 获取 GENAI_API_KEY
+
+✅ 在 .env 文件中保存 API 密钥（TELEGRAM_TOKEN、GENAI_API_KEY）
+
+✅ 运行 pip install -r requirements.txt 安装依赖
+
+✅ 运行 python tbot.py 并进行翻译测试 🚀
 
 ✅ python tbot.py 실행 후 번역 테스트 🚀
