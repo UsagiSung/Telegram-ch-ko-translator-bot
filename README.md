@@ -14,13 +14,13 @@ Google의 Gemini AI를 사용하여 빠르고 문화적 차이와 맥락을 고�
 
 🚨채팅방에서 /chatid 명령어를 입력하여 ID를 확인 후 .env 파일에 추가하세요.
 
-=======🚀 설치 및 실행 방법=======
+======= 🚀 설치 및 실행 방법 =======
 
 1️⃣ 필수 패키지 설치
 
 pip install -r requirements.txt
 
-✅ 위 명령어를 실행하면 필요한 모든 패키지가 자동으로 설치됩니다.
+✅ 위 명령어를 실행하면 필요한 모든 패키지가 자동으로 설치됩니다. (python-dotenv)
 
 2️⃣ 텔레그램 봇 생성 (BotFather 이용)
 
@@ -48,15 +48,13 @@ Step 2. 텔레그램에서 봇 활성화
 
 3️⃣ Google Gemini API 키 등록
 
-Step 1. Google AI 스튜디오에서 API 키 발급
-
 Google AI Studio로 이동합니다.
+
+https://aistudio.google.com/app/apikey
 
 Get API Key 버튼을 클릭하여 새 API 키를 생성합니다.
 
 생성된 API 키를 .env 파일의 GENAI_API_KEY 값으로 저장하세요.
-
-📌 결과: Google Gemini API 키를 발급받아 .env 파일에 추가해야 합니다.
 
 4️⃣ .env 파일 생성 및 설정
 
@@ -76,7 +74,9 @@ GENAI_API_KEY=your-gemini-api-key
 
 ALLOWED_CHAT_IDS=your-chat-id
 
-✅ your-telegram-bot-token과 your-gemini-api-key를 실제 API 키로 변경하세요.
+✅ 전부 실제 API 키, chat ID로 변경하세요.
+
+✅ ALLOWED_CHAT_IDS는 번역을 수행할 채팅방에서 /chatid 명령어를 입력하면 알 수 있습니다.
 
 5️⃣ 봇 실행
 
@@ -85,10 +85,6 @@ python tbot.py
 ✅ 서버에서 Python을 실행하면 번역 봇이 동작합니다. 🚀
 
 💡 사용 가능한 명령어
-
-명령어
-
-설명
 
 /start
 
@@ -108,7 +104,7 @@ python tbot.py
 
 ⚠️ Gemini Flash 모델 특성상 번역이 누적되면 이상한 결과가 나올 수 있습니다. 주기적으로 /restart를 실행하여 번역 정확도를 유지하세요.
 
-🎯 최종 정리
+======= 🎯 최종 정리 =======
 
 ✅ @BotFather로 텔레그램 봇 생성 → TELEGRAM_TOKEN 얻기
 
